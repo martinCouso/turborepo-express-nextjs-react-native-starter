@@ -1,0 +1,33 @@
+{
+  "name": "present-turbo-repo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-reanimated",
+      "**/@react-native-community",
+      "**/@react-native-community/**",
+      "**/*react-navigation/native*",
+      "**/*react-navigation/native*/**",
+      "**/metro-*",
+      "**/metro-*/**"
+    ]
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "turbo": "latest"
+  },
+  "packageManager": "yarn@1.22.17"
+}
